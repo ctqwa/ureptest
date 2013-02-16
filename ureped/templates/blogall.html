@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Home" %}{% endblock %}
+
+{% block breadcrumb_menu %}
+<li class="active">{% trans "Home" %}</li>
+{% endblock %}
+
+{% block main %}
+
+   <div class="panel-content">
+      <div id="blog_posts"></div>
+	<script type="text/javascript">// <![CDATA[
+    $.get("/blog/").success(function(content) {
+        $('#blog_posts').html(content);
+    });
+		// ]]></script>
+		
+            </div>
+
+{% endblock %}
+
+
+{% block main2 %}
+{% trans "This is the homepage." %}
+{% endblock %}

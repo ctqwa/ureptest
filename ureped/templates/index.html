@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block meta_title %}{% trans "~" %}{% endblock %}
+
+{% block breadcrumb_menu %}
+<li class="active">{% trans "Home" %}</li>
+{% endblock %}
+
+{% block mainhome %}
+
+<div class="span8">
+<div class="row">
+     <div class="span4">
+      <div id="blog_posts_col1"></div>
+    <script type="text/javascript">// <![CDATA[
+    $.get("/blog/?page=1").success(function(content) {
+        $('#blog_posts_col1').html(content);
+    });
+        // ]]></script>
+            </div>
+
+        <div class="span4">
+      <div id="blog_posts_col2"></div>
+    <script type="text/javascript">// <![CDATA[
+    $.get("/blog/?page=3").success(function(content) {
+        $('#blog_posts_col2').html(content);
+    });
+        // ]]></script>
+            </div>
+        </div>
+       <div class="row">
+
+    <div class="span4">
+      <div id="blog_posts_col3"></div>
+    <script type="text/javascript">// <![CDATA[
+    $.get("/blog/?page=2").success(function(content) {
+        $('#blog_posts_col3').html(content);
+    });
+        // ]]></script>
+            </div>
+
+    <div class="span4">
+      <div id="blog_posts_col4"></div>
+    <script type="text/javascript">// <![CDATA[
+    $.get("/blog/?page=4").success(function(content) {
+        $('#blog_posts_col4').html(content);
+    });
+        // ]]></script>
+            </div>
+</div>
+        </div>
+{% endblock %}
+
+
+   
